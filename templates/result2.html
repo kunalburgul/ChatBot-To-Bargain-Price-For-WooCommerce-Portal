@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tutorial</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- CSS -->
+    <link href="/static/style.css" rel="stylesheet">
+    <meta name="robots" content="noindex,follow" />
+
+  </head>
+
+  <body>
+    <main class="container">
+      <!-- Left Column / Headphones Image -->
+      <div class="left-column">
+        <img data-image="black" src="/static/black.png" alt="">
+        <img data-image="blue" src="/static/blue.png" alt="">
+        <img data-image="red" class="active" src="/static/red.png" alt="">
+      </div>
+
+
+      <!-- Right Column -->
+      <div class="right-column">
+
+        <!-- Product Description -->
+        <div class="product-description">
+          <span>Headphones</span>
+          <h1>Beats EP</h1>
+          <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
+        </div>
+
+        <!-- Product Pricing -->
+        <form  action="/result" method="POST">
+        <div class="ActualPrice">
+        <!-- <label for = "ActualPrice" >1000</label> -->
+        <span>Rs. 1000</span>
+        </div>
+        </form>
+        <br>
+
+        <!-- Product Configuration -->
+        <div class="product-configuration">
+
+          <!-- Product Color -->
+          <div class="product-color">
+            <span>Color</span>
+
+            <div class="color-choose">
+              <div>
+                <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+                <label for="red"><span></span></label>
+              </div>
+              <div>
+                <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                <label for="blue"><span></span></label>
+              </div>
+              <div>
+                <input data-image="black" type="radio" id="black" name="color" value="black">
+                <label for="black"><span></span></label>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Cable Configuration -->
+          <!-- <div class="cable-config">
+            <span>Cable configuration</span>
+
+            <div class="cable-choose">
+              <button>Straight</button>
+              <button>Coiled</button>
+              <button>Long-coiled</button>
+            </div>
+
+            <a href="#">How to configurate your headphones</a>
+          </div> -->
+
+
+        </div>
+
+        <!-- <h3 align="center"></DIC> Chat Box</h3>
+        <div id="chatBox"></div> -->
+        <div id="chatBox">
+          User:{{ userprice }}
+          <br>
+          System:{{discountedprice}}
+          <br>
+        </div>
+
+
+        <!-- {% for userprice in userprice_list %}
+        {{ userprice }}
+        {% endfor %} -->
+
+        <form  action="/result" method="POST">
+          <label align="left" for="ProductID">ProductID:</label>
+          <input type="text" id="ProductID" name="ProductID">
+          <br>
+          <label align="left" for="CustomerID">CustomerID:</label>
+          <input type="text" id="CustomerID" name="CustomerID">
+          <br>
+          <label align="left" for="Quantity">Quantity:</label>
+          <input type="text" id="Quantity" name="Quantity">
+          <br>
+          <!-- <label align="left" name="ActualPrice" for="ActualPrice">ActualPrice</label> -->
+          <label align="left">ActualPrice</label>
+          <input type="text" id="ActualPrice" name="ActualPrice" value="1000">
+          <!-- <input type="text" id="ActualPrice" name="ActualPrice"> -->
+          <br>
+          <label align="left" for="UserPrice">UserPrice:</label>
+          <input type="text" id="UserPrice" name="UserPrice">
+          <br>
+          <br>
+          <input type="submit" onClick="/templates/index.html" value="Go for other product">
+        </form>
+
+
+
+
+        </div>
+      </div>
+    </main>
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <script src="/static/script.js" charset="utf-8"></script>
+  </body>
+</html>
